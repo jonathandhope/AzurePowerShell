@@ -2,7 +2,7 @@ param(
     [string]$SourceDir = $env:BUILD_SOURCESDIRECTORY,
     [string]$TempDir = $env:TEMP
 )
-$ErrorActionPreference = &quot;Stop&quot;
+$ErrorActionPreference = "Stop"
  
 $modulePath = Join-Path $TempDir Pester-master\Pester.psm1
  
@@ -20,6 +20,6 @@ if (-not(Test-Path $modulePath)) {
  
 Import-Module $modulePath -DisableNameChecking
  
-$outputFile = Join-Path $SourceDir &quot;TEST-pester.xml&quot;
+$outputFile = Join-Path $SourceDir "TEST-pester.xml"
  
 Invoke-Pester -Path $SourceDir -PassThru -OutputFile $outputFile -OutputFormat NUnitXml -EnableExit
