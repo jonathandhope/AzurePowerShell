@@ -1,8 +1,12 @@
-﻿function AnswerToUltimateQuestion {
+﻿function Get-VmssInstanceCount {
 
 	[CmdletBinding()]
 	[OutputType([int])]
-	Param ()
+	Param (
+		[string]$ResourceGroupName,
+		[string]$VirtualMachineScaleSetName
+	)
 
-	42
+	$vmss = Get-AzureRmVmss -ResourceGroupName $ResourceGroupName -VMScaleSetName $VirtualMachineScaleSetName
+	$vmss.sku.capacity
 }
