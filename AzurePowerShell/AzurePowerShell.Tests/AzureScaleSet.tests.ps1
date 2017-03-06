@@ -5,8 +5,8 @@ $sut = (Split-Path -Leaf $MyInvocation.MyCommand.Path).Replace(".tests.", ".")
 Describe "Virtual Machine Scale Set" {
 	Context "Given the scale exists" {
 		It "Returns the number of instances" {
-			Login-AzureRmAccount -SubscriptionName AsosFinanceDevTest
-			Get-VmssInstanceCount -ResourceGroupName aspay-rg-fabricpci-eun-80test -VirtualMachineScaleSetName FrontEnd | 
+			Login-AzureRmAccount -SubscriptionName 
+			Get-VmssInstanceCount -ResourceGroupName  -VirtualMachineScaleSetName FrontEnd | 
 				Should Be 3
 		}
 	}
